@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Ackermann steering geometry analysis (MATLAB)"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Patil
+    given-names: Jaykumar
+repository-code: "https://github.com/jaykumarpatil9099/ackermann-steering-analysis"
+license: MIT
+keywords: [vehicle dynamics, steering, ackermann, matlab]
