@@ -1,5 +1,10 @@
 # Ackermann Steering Geometry — MATLAB
 
+[![CI](https://github.com/jaykumarpatil9099/ackermann-steering-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/jaykumarpatil9099/ackermann-steering-analysis/actions/workflows/ci.yml)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jaykumarpatil9099/ackermann-steering-analysis)
+![MATLAB](https://img.shields.io/badge/MATLAB-R2023b%2B-orange)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 Analytical study of front-axle steering geometry for a four-wheel vehicle. Compares **pure Ackermann**, **parallel**, and **anti-Ackermann** linkages on three axes:
 
 - The geometric inner-vs-outer wheel angle relationship
@@ -88,6 +93,17 @@ Default vehicle parameters describe a formula-class car, consistent with the 14-
 | Steering ratio | 20 deg/deg |
 | Cornering stiffness `C_α` | 50 kN/rad per tyre |
 
+## Quick start
+
+In MATLAB R2023b or newer, or with *Open in MATLAB Online* above (a free MathWorks account is enough):
+
+```matlab
+buildtool            % static code analysis + unit tests
+buildtool figures    % regenerate the README figures
+```
+
+The test suite checks the classic Ackermann condition `cot δo − cot δi = t / L`, the parallel and anti-Ackermann parametrisation, near-zero slip for pure Ackermann, and the SAE/ISO tyre sign convention. It runs in GitHub Actions on every push.
+
 ## File layout
 
 ```
@@ -101,11 +117,14 @@ ackermann-steering-analysis/
     ├── plot_geometry_comparison.m
     ├── plot_slip_and_forces.m
     └── plot_parametric_sweep.m
+├── tests/AckermannTest.m        # matlab.unittest suite
+├── buildfile.m                  # MATLAB build tool: check, test, figures
+└── .github/workflows/ci.yml     # CI on every push
 ```
 
 ## Background
 
-Originally built during the Vehicle Dynamics Modelling and Simulation course of the M.Sc. Interdisciplinary Engineering (Automotive) programme at [Hochschule Trier](https://www.hochschule-trier.de/). Course is in progress — final assignment outstanding, certificate not yet issued.
+Originally built during the Vehicle Dynamics Modelling and Simulation course of the M.Sc. Interdisciplinary Engineering (Automotive) programme at [Hochschule Trier](https://www.hochschule-trier.de/).
 
 ## License
 
